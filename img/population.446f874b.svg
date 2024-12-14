@@ -1,0 +1,66 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+	<title>population-svg</title>
+	<style>
+		.s0 { fill: #dbe8f1 } 
+		.s1 { fill: #f15e5b } 
+		.s2 { fill: #fcc66c } 
+		.s3 { fill: #1f53cd } 
+		.s4 { fill: #6389e2 } 
+	</style>
+	<g id="Layer">
+		<g id="Layer">
+			<g id="Layer">
+				<g id="Layer">
+					<g id="Layer">
+						<path id="Layer" class="s0" d="m52 26.6v24.1c0 1.8-1.5 3.3-3.3 3.3h-37.4c-1.8 0-3.3-1.5-3.3-3.3v-24.2c0-0.3 0.2-0.6 0.4-0.8l21-13.7c0.4-0.2 0.8-0.2 1.1 0l21 13.7c0.3 0.2 0.5 0.5 0.5 0.8z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="Layer">
+			<g id="Layer">
+				<g id="Layer">
+					<g id="Layer">
+						<path id="Layer" class="s1" d="m54 22v5.9c0 0.3-0.2 0.7-0.5 0.8q-0.3 0.2-0.5 0.2-0.3-0.1-0.5-0.2l-22.5-14.7-22.4 14.7c-0.4 0.2-0.7 0.2-1.1 0-0.3-0.1-0.5-0.5-0.5-0.8v-5.9c0-0.3 0.2-0.6 0.5-0.8l23-15c0.3-0.2 0.7-0.2 1.1 0l23 15c0.2 0.2 0.4 0.5 0.4 0.8z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="Layer">
+			<g id="Layer">
+				<g id="Layer">
+					<g id="Layer">
+						<path id="Layer" class="s2" d="m30 40c-3.9 0-7-3.1-7-7 0-3.9 3.1-7 7-7 3.9 0 7 3.1 7 7 0 3.9-3.1 7-7 7z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="Layer">
+			<g id="Layer">
+				<g id="Layer">
+					<g id="Layer">
+						<path id="Layer" class="s3" d="m41 45.4v8.6h-22v-8.6c0-3 2.4-5.4 5.4-5.4h11.2c3 0 5.4 2.4 5.4 5.4z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="Layer">
+			<g id="Layer">
+				<g id="Layer">
+					<g id="Layer">
+						<path id="Layer" class="s4" d="m36 47v7h-2v-7c0-0.5 0.5-1 1-1 0.5 0 1 0.5 1 1z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="Layer">
+			<g id="Layer">
+				<g id="Layer">
+					<g id="Layer">
+						<path id="Layer" class="s4" d="m26 47v7h-2v-7c0-0.5 0.4-1 1-1 0.6 0 1 0.5 1 1z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
