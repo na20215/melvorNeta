@@ -1,0 +1,65 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460" width="460" height="460">
+	<title>furnace-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #f0651f } 
+		.shp1 { fill: #f58330 } 
+		.shp2 { fill: #ffc052 } 
+		.shp3 { fill: #f9d4a0 } 
+		.shp4 { fill: #735787 } 
+		.shp5 { fill: #8c68a5 } 
+		.shp6 { fill: #cb9851 } 
+		.shp7 { fill: #76593f } 
+		.shp8 { fill: #967151 } 
+		.shp9 { fill: #3c261b } 
+		.shp10 { fill: #c53e16 } 
+		.shp11 { fill: #762916 } 
+	</style>
+	<g id="XMLID_227_">
+		<path id="XMLID_228_" class="shp0" d="M282.16 69.81C290.23 80.64 295 94.06 295 108.6C295 144.5 265.9 173.6 230 173.6L210 120L230 0L282.16 69.81Z" />
+		<path id="XMLID_229_" class="shp1" d="M230 173.6C194.1 173.6 165 144.5 165 108.6C165 94.06 169.77 80.64 177.84 69.81L230 0L230 173.6Z" />
+		<path id="XMLID_230_" class="shp2" d="M259.15 99.44C263.82 105.7 266.29 113.19 266.29 121.07C266.29 141.07 250.01 157.35 230 157.35L220 120L230 60.43L259.15 99.44Z" />
+		<path id="XMLID_231_" class="shp3" d="M230 60.43L230 157.35C209.99 157.35 193.71 141.07 193.71 121.07C193.71 113.19 196.18 105.7 200.87 99.42L230 60.43Z" />
+		<path id="XMLID_232_" class="shp4" d="M378.82 170L430 460L230 460L170 315L230 150L378.82 170Z" />
+		<path id="XMLID_233_" class="shp2" d="M340 340L370 340L370 370L340 370L340 340Z" />
+		<path id="XMLID_235_" class="shp2" d="M340 400L370 400L370 430L340 430L340 400Z" />
+		<path id="XMLID_236_" class="shp5" d="M230 460L30 460L81.18 170L230 150L230 460Z" />
+		<path id="XMLID_237_" class="shp6" d="M111.18 200L141.18 200L141.18 230L111.18 230L111.18 200Z" />
+		<path id="XMLID_238_" class="shp7" d="M378.69 169.24L378.82 170L230 170L210 145L230 120L320 120C347.5 120 373.91 142.16 378.69 169.24Z" />
+		<path id="XMLID_239_" class="shp8" d="M230 120L230 170L81.18 170L81.31 169.24C86.09 142.16 112.5 120 140 120L230 120Z" />
+		<path id="XMLID_240_" class="shp9" d="M310 340L210 360L230 260C274.18 260 310 295.82 310 340Z" />
+		<path id="XMLID_241_" class="shp10" d="M310 340L310 401.43L230 401.43L210 340L310 340Z" />
+		<path id="XMLID_242_" class="shp0" d="M230 340L230 401.43L150 401.43L150 340L190 320L230 340Z" />
+		<path id="XMLID_243_" class="shp11" d="M230 260L230 340L150 340C150 295.82 185.82 260 230 260Z" />
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+</svg>

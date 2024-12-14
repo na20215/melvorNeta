@@ -1,0 +1,24 @@
+// import { createApp } from 'vue';
+// import App from './app.vue';
+// import ContentStructure from './components/ContentStructure.vue';
+// import SkillBar from './components/SkillBar.vue';
+// const app = createApp(App);
+// app.component('skill-content', ContentStructure);
+// app.component('skill-bar', SkillBar);
+// app.mount('#app');
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import App from './app.vue';
+import BasicBlock from './components/layout/basicBlock.vue';
+import BasicExpBar from './components/layout/BasicExpBar.vue'
+import BasicUnit from './components/layout/basicUnit.vue';
+import BaseHelpPage from './components/layout/baseHelpPage.vue';
+const app = createApp(App);
+const pinia = createPinia();
+app.component('basic-block',BasicBlock);
+app.component('basic-exp-bar',BasicExpBar);
+app.component('basic-unit',BasicUnit);
+app.component('base-help-page',BaseHelpPage);
+app.use(pinia);
+app.mount('#app');

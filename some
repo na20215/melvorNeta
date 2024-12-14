@@ -1,0 +1,17 @@
+personal story:
+有些人出于某些原因，会把所有的代码放在一个文件里， 项目大了以后非常难以阅读和继续开发。 
+虽然我们可以给代码分块来环节问题但是不够有效。
+
+current solution:
+用注释为代码块加标签， 用ctrl f 搜索跳转
+disadvantage;
+代码量大了，依旧混乱。
+
+vscode component:
+这个插件可以打书签跳转，灵活添加删除标签
+
+disadvantage:
+checkout 跳转分支会删掉所有的书签，切回来也得重加
+
+idea:
+markdown 
