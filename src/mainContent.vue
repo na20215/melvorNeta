@@ -31,18 +31,19 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
 import mainTitle from './components/layout/mainTitle.vue'
-import SkillCooking from './components/layout/skills/skillCooking.vue'
-import SkillCutting from './components/layout/skills/skillCutting.vue'
-import SkillFireMaking from './components/layout/skills/skillFireMaking.vue'
-import SkillFishing from './components/layout/skills/skillFishing.vue'
-import SkillMining from './components/layout/skills/skillMining.vue'
-import SkillSmithing from './components/layout/skills/skillSmithing.vue'
-import SkillFarming from './components/layout/skills/skillFarming.vue'
 import StoreTheWarehouse from './components/layout/skills/store/storeTheWarehouse.vue'
+
 export default {
-  components: { mainTitle, StoreTheWarehouse, SkillCutting, SkillFishing, SkillFireMaking, SkillCooking,
-     SkillMining, SkillSmithing, SkillFarming},
+  components: { mainTitle, StoreTheWarehouse, 
+    SkillCutting: defineAsyncComponent(() => import('./components/layout/skills/skillCutting.vue')),
+    SkillFishing: defineAsyncComponent(() => import('./components/layout/skills/skillFishing.vue')),
+    SkillFireMaking: defineAsyncComponent(() => import('./components/layout/skills/skillFireMaking.vue')),
+    SkillCooking: defineAsyncComponent(() => import('./components/layout/skills/skillCooking.vue')),
+    SkillMining: defineAsyncComponent(() => import('./components/layout/skills/skillMining.vue')),
+    SkillSmithing: defineAsyncComponent(() => import('./components/layout/skills/skillSmithing.vue')),
+    SkillFarming: defineAsyncComponent(() => import('./components/layout/skills/skillFarming.vue')),},
   props:{
     skillName:{
         type:String,

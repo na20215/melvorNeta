@@ -47,7 +47,7 @@
             <div class="categoriesAndItems">
                 <div class="warehouseInfo"></div>
                 <div class="warehouse">
-                    <item-unit
+                    <item-unit 
                         v-for="(key,idx) in warehouseOrder"
                         :key="key"
                         draggable="true"
@@ -84,11 +84,11 @@
                 <div class="itemDetail" v-if="selectedItem !== ''">
                     <div class="iconAndInfo">
                         <div class="Icon">
-                            <img class="displayPicture" :src="`${items.get(selectedItem).imageUrl}`">
-                            <div class="itemNumber">{{ items.get(selectedItem).quantity }}</div>
+                            <img class="displayPicture" :src="`${selectedItemDetail.imageUrl}`">
+                            <div class="itemNumber">{{ selectedItemDetail.quantity }}</div>
                         </div>
                         <div class="Info">
-                            <div class="name">{{ items.get(selectedItem).name }}</div>
+                            <div class="name">{{ selectedItemDetail.name }}</div>
                             <div class="description">这里应该是描述</div>
                             <div class="dataCheck"></div>
                         </div>
@@ -105,21 +105,30 @@
                             <div style="font-size: 0.75rem;">出售物品</div>
                             <div class="money">
                                 <img src="../../../../assets/main/coins.svg" style="height: 1rem; width: 1rem;">
-                                {{ items.get(selectedItem).value }} 
+                                {{ selectedItemDetail.value }} 
                             </div>
                         </div>
                         <div class="slidebar">
                             <div class="minAndMax">
                                 <div class="minAndMaxValue">1</div>
-                                <div class="minAndMaxValue">{{items.get(selectedItem).quantity}}</div>
+                                <div class="minAndMaxValue">{{selectedItemDetail.quantity}}</div>
                             </div>
-                            <input type="range" min="1" max="100" value="1" step="1">
+                            <input type="range" min="1" :max="selectedItemDetail.quantity" value="1" step="1" v-model="sellNumber">
                         </div>
-                        <div class="inputPart"></div>
-                        <div class="clickButton"></div>
+                        <div class="inputPart">
+                            <input class="sellInput" type="text" placeholder="出售数量" value="1" v-model="sellNumber">
+                            <div class="twoSaveBut">
+                                <div class="keepBut" @click="keepOne(selectedItemDetail.quantity)">保留一份</div>
+                                <div class="keepBut" @click="sellAll(selectedItemDetail.quantity)">全部</div>
+                            </div>
+                        </div>
+                        <div class="whiteLine"></div>
+                        <div class="clickButton">
+                            <div class="sellBut" @click="sellTheItem()">出售物品</div>
+                        </div>
                         <div class="bottomTitle">
                             <img src="../../../../assets/main/coins.svg" style="height: 1rem; width: 1rem;">
-                            {{ sellListWorth }}
+                            {{ selectedItemDetail.value * sellNumber }}
                         </div>
                     </div>
                 </div>
@@ -144,11 +153,13 @@ export default {
         store.warehouseOrder;
         const additem = store.addItem;
         const deleteItem = store.deleteItem;
+        const costomItem = store.costItem;
         const addMoney = store.addMoney;
         return{
             items,
             warehouseOrder,
             additem,
+            costomItem,
             deleteItem,
             addMoney,
         };
@@ -157,10 +168,12 @@ export default {
         return {
             searchBarContent:'',
             selectedItem: '',
+            selectedItemDetail:{},
             draggingItemInfo: [],
             targetItemInfo: [],
             sellList: new Set(),
             sellListWorth: 0,
+            sellNumber: 1,
             movingList:new Set(),
             mode:'normalMode',
             detailGuideBar:'icon',
@@ -256,6 +269,25 @@ export default {
         },
         guideBarSelection(info){
             this.detailGuideBar = info;
+        },
+        keepOne(num){
+            if(num > 1){
+                return this.sellNumber = num - 1;
+            } 
+        },
+        sellAll(num){
+            return this.sellNumber = num;
+        },
+        sellTheItem(){
+            if(this.sellNumber !== 0){
+                const targetName = this.selectedItemDetail.name;
+                this.addMoney(this.selectedItemDetail.value * this.sellNumber);
+                
+                if(this.selectedItemDetail.quantity === this.sellNumber){
+                    this.selectedItem = '';
+                }
+                this.costomItem(targetName,this.sellNumber);
+            }
         }
     },
     computed:{
@@ -265,9 +297,15 @@ export default {
             }else{
                 return {name: 'unselected',imageUrl: require('@/assets/main/question.svg')};
             }
-            
+        },
+    },
+    watch:{
+        selectedItem(newVal){
+            if(newVal !== '')
+            this.selectedItemDetail = this.items.get(newVal);
         }
     }
+
 }
 </script>
 
@@ -665,16 +703,73 @@ export default {
     display: flex;
     flex-direction: row;
     flex: 6;
+    margin: 0 1rem;
+    justify-content: space-between;
+}
+.sellInput{
+    appearance: none;
+    display: flex;
+    width: 10rem;
+    height: 2rem;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.2rem;
+    color:white;
+    background-color: rgb(45,53,66);
+    border: 0.1rem rgb(white) solid;
+}
+.twoSaveBut{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0 1rem 0 0;
+}
+.keepBut{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center ;
+    color: white;
+    background-color: rgb(92,172,229);
+    border-radius: 0.25rem;
+    width: 6rem;
+    height: 2rem;
+    cursor: pointer;
 }
 
+.keepBut:hover{
+    background-color: rgb(59,155,224)
+}
+
+.whiteLine{
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
 .clickButton{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex: 4;
-}
 
+}
+.sellBut{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    width: 14rem;
+    height: 2rem;
+    background-color: rgb(229,103,103);
+    cursor: pointer;
+}
+.sellBut:hover{
+    background-color: rgb(223,70,70);
+}
 .bottomTitle{
     display: flex;
     flex: 3;

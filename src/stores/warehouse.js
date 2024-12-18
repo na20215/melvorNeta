@@ -116,26 +116,28 @@ export const useWarehouseStore = defineStore('warehouse', {
     },
 
     deleteItem(itemId){
-      this.items.delete(itemId);
       const index = this.warehouseOrder.indexOf(itemId);
-      this.warehouseOrder.splice(index,1)
+        this.warehouseOrder.splice(index,1);
+        this.items.delete(itemId);
     },
 
     costItem(itemId, count) {
       const targetItem = this.items.get(itemId);
-      if (targetItem.count < count) {
+      if (targetItem.quantity < count) {
         console.log(`Action failed, the number of ${targetItem.name} is not enough`);
         return;
       }
-      targetItem.count -= count;
-      if (targetItem.count === 0) {
+      console.log(`${itemId} is reduce ${count}`)
+      if(targetItem.quantity !== count)
+      targetItem.quantity -= count;
+      else{
         this.deleteItem(itemId);
       }
     },
 
     getItemNumber(itemId) {
       const thisItem = this.items.get(itemId);
-      return thisItem ? thisItem.count : 0;
+      return thisItem ? thisItem.quantity : 0;
     },
     addMoney(num){
       this.coin += num;
